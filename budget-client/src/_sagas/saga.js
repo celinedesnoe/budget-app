@@ -20,9 +20,17 @@ export function* budgetAsync(value) {
   yield put({ type: "DECREASE", payload: value });
 }
 
+export function* addExpenseAsync(value) {
+  yield put({ type: "ADD", payload: value });
+}
+
 // CATCH THE ACTION AND THEN RUN THE FUNCTION ageUpAsync THAT DISPATCH THE ACTION WITH A DIFFERENT NAME
 export function* watchBudgetDown() {
   yield takeEvery("DECREASE_ASYNC", budgetAsync);
+}
+
+export function* watchAddExpense() {
+  yield takeEvery("ADD_ASYNC", addExpenseAsync);
 }
 
 // notice how we now only export the rootSaga
@@ -30,5 +38,5 @@ export function* watchBudgetDown() {
 // This Saga yields an array with the results of calling our two sagas
 // will be started in parallel
 export default function* rootSaga() {
-  yield all([watchBudgetDown(), helloSaga()]);
+  yield all([watchBudgetDown(), watchAddExpense(), helloSaga()]);
 }
