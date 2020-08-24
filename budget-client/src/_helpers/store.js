@@ -11,5 +11,3 @@ export const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
 
 // start the saga
 sagaMiddleware.run(rootSaga);
-
-const action = (type) => store.dispatch({ type });
