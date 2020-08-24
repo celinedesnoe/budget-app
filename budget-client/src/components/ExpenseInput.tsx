@@ -15,16 +15,18 @@ const ExpenseInput: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    let expense = { amount: amount, type: type };
-    if (amount) {
-      dispatch(budgetUpdateSuccess(amount));
-      dispatch(addExpenseSuccess(expense));
-    }
-    setAmount("");
+    addExpense();
   };
 
   const selectType = (oneType: string) => {
     setType(oneType);
+  };
+
+  const addExpense = () => {
+    let expense = { amount: amount, type: type };
+    dispatch(budgetUpdateSuccess(amount));
+    dispatch(addExpenseSuccess(expense));
+    setAmount("");
   };
 
   return (
@@ -47,7 +49,7 @@ const ExpenseInput: React.FC = () => {
       <div
         className="minus"
         onClick={() => {
-          dispatch(budgetUpdateSuccess(amount));
+          addExpense();
         }}
       >
         Add expense
