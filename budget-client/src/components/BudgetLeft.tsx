@@ -5,7 +5,7 @@ interface RootState {
   budget: number; // your props validation
 }
 
-const BudgetLeft = () => {
+const BudgetLeft: React.FC = () => {
   const selectBudget = (state: RootState) => state.budget;
   const budget = useSelector(selectBudget);
   return <div className="d-flex ">{budget}</div>;
