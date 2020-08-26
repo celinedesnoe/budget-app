@@ -10,8 +10,8 @@ const BudgetLeft: FC = () => {
   const budget = useSelector(selectBudget);
   return (
     <div className="budget-left">
-      <div>Solde restant</div>
-      <div className="bold">{budget}</div>
+      <div className="lighter">Solde restant</div>
+      <div className="title">{budget}</div>
     </div>
   );
 };

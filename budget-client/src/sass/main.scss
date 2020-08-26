@@ -3,6 +3,8 @@
 
 @import "./vendors/bootstrap";
 
+@import "./base/typography";
+
 @import "./components/input";
 
 @import "./layout/card";
@@ -67,4 +69,17 @@ body {
   &.selected {
     color: blue;
   }
+}
+
+.bar {
+  width: 200px;
+  height: 10px;
+  border: 1px solid grey;
+  position: relative;
+}
+
+.bar-progression {
+  position: absolute;
+  background-color: blue;
+  height: 10px;
 }

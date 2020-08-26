@@ -3,6 +3,7 @@ import ExpenseInput from "./components/ExpenseInput.tsx";
 import BudgetLeft from "./components/BudgetLeft.tsx";
 import ListExpenses from "./components/ListExpenses.tsx";
 import { library } from "@fortawesome/fontawesome-svg-core";
+import BudgetProgression from "./components/BudgetProgression";
 
 import {
   faHome,
@@ -25,8 +26,8 @@ library.add(
 function App() {
   return (
     <div className="App">
-      <div>BUDGET</div>
       <BudgetLeft />
+      <BudgetProgression />
       <ExpenseInput />
       <ListExpenses />
     </div>
