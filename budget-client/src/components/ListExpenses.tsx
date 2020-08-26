@@ -3,7 +3,12 @@ import { useSelector } from "react-redux";
 import OneExpense from "./OneExpense";
 
 interface RootState {
-  expenses: { amount: number; type: string; date: string }[]; // your props validation
+  expenses: {
+    amount: number;
+    type: string;
+    date: string;
+    description: string;
+  }[]; // your props validation
 }
 
 const ListExpenses: React.FC = () => {
@@ -12,7 +17,7 @@ const ListExpenses: React.FC = () => {
 
   return (
     <div className="">
-      <div>List of expenses</div>
+      <div>Liste des dernières dépenses</div>
       <div className="list-expenses">
         {expenses.map((expense, i) => {
           return <OneExpense expense={expense} />;

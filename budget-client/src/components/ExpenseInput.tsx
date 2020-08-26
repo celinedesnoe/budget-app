@@ -11,11 +11,7 @@ const ExpenseInput: FC = () => {
   const dispatch = useDispatch();
   const [amount, setAmount] = useState<number | string>("");
   const [type, setType] = useState<string>("");
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let expense = e.target.value;
-    setAmount(+expense);
-  };
+  const [description, setDescription] = useState<string>("");
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -28,11 +24,18 @@ const ExpenseInput: FC = () => {
 
   const addExpense = () => {
     let date = moment().format("L");
-    let expense = { amount: amount, type: type, date: date };
+    let expense = {
+      amount: amount,
+      type: type,
+      date: date,
+      description: description,
+    };
     dispatch({ type: "DECREASE_ASYNC", payload: amount });
     // dispatch(budgetUpdateSuccess(amount));
     dispatch(addExpenseSuccess(expense));
     setAmount("");
+    setType("");
+    setDescription("");
   };
 
   return (
@@ -47,10 +50,18 @@ const ExpenseInput: FC = () => {
           placeholder={"130"}
           value={amount}
           type={"number"}
-          onChange={(e) => handleChange(e)}
+          onChange={(e) => setAmount(+e.target.value)}
           step="any"
         />
         <ListTypes select={selectType} />
+        <input
+          className={`form-control expense-input pb-1`}
+          placeholder={"Monoprix"}
+          value={description}
+          type={"text"}
+          onChange={(e) => setDescription(e.target.value)}
+          step="any"
+        />
       </form>
       <div
         className="button-add-expense"

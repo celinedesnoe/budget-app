@@ -1,10 +1,10 @@
 import React from "react";
 interface IProps {
-  expense: { amount: number; type: string; date: string };
+  expense: { amount: number; type: string; date: string; description: string };
 }
 
 const OneExpense: React.FC<IProps> = ({ expense }) => {
-  let { amount, type, date } = expense;
+  let { amount, type, date, description } = expense;
   return (
     <div
       className="d-flex justify-content-between align-items-center one-expense"
@@ -13,7 +13,7 @@ const OneExpense: React.FC<IProps> = ({ expense }) => {
       <div className="d-flex align-items-center">
         <div className="type">{type}</div>
         <div>
-          <div>Expense</div>
+          <div>{description}</div>
           <div>{date}</div>
         </div>
       </div>
