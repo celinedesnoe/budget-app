@@ -1,0 +1,9 @@
+.card {
+  border: unset;
+  background-color: white;
+  color: white;
+  border-radius: 4px;
+  box-shadow: 5px 5px 24px rgba(0, 0, 0, 0.25);
+  padding: 1rem 1.5rem !important;
+  @include card($card-colour-palettes);
+}

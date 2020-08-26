@@ -1,0 +1,7 @@
+@mixin card($card-colour-palettes) {
+  @each $state, $card-colour in $card-colour-palettes {
+    &-#{$state} {
+      background-color: $card-colour;
+    }
+  }
+}
