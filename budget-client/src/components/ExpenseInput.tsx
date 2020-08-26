@@ -2,6 +2,10 @@ import React, { FC, useState } from "react";
 import { useDispatch } from "react-redux";
 import { budgetUpdateSuccess, addExpenseSuccess } from "../_actions/action";
 import ListTypes from "./ListTypes";
+import moment from "moment";
+import "moment/locale/fr";
+
+moment.locale("fr");
 
 const ExpenseInput: FC = () => {
   const dispatch = useDispatch();
@@ -23,9 +27,9 @@ const ExpenseInput: FC = () => {
   };
 
   const addExpense = () => {
-    let expense = { amount: amount, type: type };
+    let date = moment().format("L");
+    let expense = { amount: amount, type: type, date: date };
     dispatch({ type: "DECREASE_ASYNC", payload: amount });
-
     // dispatch(budgetUpdateSuccess(amount));
     dispatch(addExpenseSuccess(expense));
     setAmount("");
