@@ -20,7 +20,7 @@ const ListTypes: React.FC<IProps> = ({ select }) => {
     "Taxes",
   ];
   return (
-    <div className="d-flex flex-column">
+    <div className="d-flex list-expense-type">
       {expenseTypes.map((oneType) => {
         return (
           <div
@@ -29,7 +29,9 @@ const ListTypes: React.FC<IProps> = ({ select }) => {
               select(oneType);
               selectType(oneType);
             }}
-            className={isSelected(oneType) ? "selected" : ""}
+            className={`one-expense-type ${
+              isSelected(oneType) ? "selected" : ""
+            }`}
           >
             {oneType}
           </div>

@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import { useDispatch } from "react-redux";
 import { budgetUpdateSuccess, addExpenseSuccess } from "../_actions/action";
 import ListTypes from "./ListTypes";
 
-const ExpenseInput: React.FC = () => {
+const ExpenseInput: FC = () => {
   const dispatch = useDispatch();
   const [amount, setAmount] = useState<number | string>("");
   const [type, setType] = useState<string>("");
@@ -24,13 +24,15 @@ const ExpenseInput: React.FC = () => {
 
   const addExpense = () => {
     let expense = { amount: amount, type: type };
-    dispatch(budgetUpdateSuccess(amount));
+    dispatch({ type: "DECREASE_ASYNC", payload: amount });
+
+    // dispatch(budgetUpdateSuccess(amount));
     dispatch(addExpenseSuccess(expense));
     setAmount("");
   };
 
   return (
-    <div className="d-flex ">
+    <div className="">
       <form
         onSubmit={(e) => {
           handleSubmit(e);
@@ -47,7 +49,7 @@ const ExpenseInput: React.FC = () => {
         <ListTypes select={selectType} />
       </form>
       <div
-        className="minus"
+        className="button-add-expense"
         onClick={() => {
           addExpense();
         }}

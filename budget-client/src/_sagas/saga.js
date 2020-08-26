@@ -17,7 +17,7 @@ export function* helloSaga() {
 
 export function* budgetAsync(value) {
   yield call(delay, 4000);
-  yield put({ type: "DECREASE", payload: value });
+  yield put({ type: "DECREASE", payload: value.payload });
 }
 
 export function* addExpenseAsync(value) {
