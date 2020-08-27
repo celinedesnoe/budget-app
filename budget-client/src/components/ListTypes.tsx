@@ -17,9 +17,9 @@ const ListTypes: React.FC<IProps> = ({ select }) => {
     { type: "Alimentation", icon: ["fa", "carrot"] },
     { type: "Maison", icon: ["fa", "home"] },
     { type: "Restaurant", icon: ["fa", "utensils"] },
-    { type: "Sorties", icon: ["fa", "glass-cheers"] },
-    { type: "Vacances", icon: ["fa", "umbrella-beach"] },
-    { type: "Taxes", icon: ["fa", "frown"] },
+    // { type: "Sorties", icon: ["fa", "glass-cheers"] },
+    // { type: "Vacances", icon: ["fa", "umbrella-beach"] },
+    // { type: "Taxes", icon: ["fa", "frown"] },
   ];
   return (
     <div className="d-flex list-expense-type">

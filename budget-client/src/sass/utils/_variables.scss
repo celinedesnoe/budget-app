@@ -1,14 +1,12 @@
 $colour-primary: #3a86ff;
 $colour-primary-light: #e8e8ec;
-$colour-warning: #ff0000;
-$colour-secondary: #3ab795;
-$colour-tertiary: #f9dc5c;
+$colour-warning: #fb5607;
+$colour-secondary: #ff006e;
+$colour-tertiary: #ffbe0b;
 $colour-grey: #908f8f;
-$colour-red: #b4001a;
-$colour-rosé: #ef9284;
 
 $colour-palettes: (
   main: $colour-primary,
-  warning: $colour-red,
+  warning: $colour-warning,
   white: $colour-tertiary,
 );

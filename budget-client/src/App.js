@@ -1,9 +1,9 @@
 import React from "react";
-import ExpenseInput from "./components/ExpenseInput.tsx";
-import BudgetLeft from "./components/BudgetLeft.tsx";
-import ListExpenses from "./components/ListExpenses.tsx";
+import { Switch, Route } from "react-router-dom";
+
 import { library } from "@fortawesome/fontawesome-svg-core";
-import BudgetProgression from "./components/BudgetProgression";
+import HomePage from "./components/HomePage";
+import AddExpense from "./components/AddExpense";
 
 import {
   faHome,
@@ -26,12 +26,14 @@ library.add(
 function App() {
   return (
     <div className="App">
-      <div className="d-flex">
-        <BudgetLeft />
-        <BudgetProgression />
-      </div>
-      <ExpenseInput />
-      <ListExpenses />
+      <Switch>
+        <Route exact path="/" render={(props) => <HomePage {...props} />} />
+        <Route
+          exact
+          path="/add-expense"
+          render={(props) => <AddExpense {...props} />}
+        />
+      </Switch>
     </div>
   );
 }
