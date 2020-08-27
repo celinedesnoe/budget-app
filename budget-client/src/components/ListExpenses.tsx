@@ -11,19 +11,26 @@ interface RootState {
   }[]; // your props validation
 }
 
-const ListExpenses: React.FC = () => {
+interface Props {
+  history: { push(): void };
+}
+
+const ListExpenses: React.FC<Props> = ({ history }) => {
   const selectExpenses = (state: RootState) => state.expenses;
   const expenses = useSelector(selectExpenses);
 
   return (
-    <div className="">
-      <div>Liste des dernières dépenses</div>
-      <div className="list-expenses">
-        {expenses.map((expense, i) => {
-          return <OneExpense expense={expense} />;
-        })}
+    console.log("history", history),
+    (
+      <div className="">
+        <div>Liste des dernières dépenses</div>
+        <div className="list-expenses">
+          {expenses.map((expense, i) => {
+            return <OneExpense expense={expense} />;
+          })}
+        </div>
       </div>
-    </div>
+    )
   );
 };
 

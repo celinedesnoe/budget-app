@@ -4,6 +4,7 @@ import { Switch, Route } from "react-router-dom";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import HomePage from "./components/HomePage";
 import AddExpense from "./components/AddExpense";
+import { withRouter } from "react-router-dom";
 
 import {
   faHome,
@@ -27,15 +28,14 @@ function App() {
   return (
     <div className="App">
       <Switch>
-        <Route exact path="/" render={(props) => <HomePage {...props} />} />
         <Route
-          exact
           path="/add-expense"
           render={(props) => <AddExpense {...props} />}
         />
+        <Route exact path="/" render={(props) => <HomePage {...props} />} />
       </Switch>
     </div>
   );
 }
 
-export default App;
+export default withRouter(App);

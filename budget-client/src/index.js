@@ -5,16 +5,17 @@ import "./sass/main.scss";
 import App from "./App";
 import { store } from "./_helpers/store";
 import { Provider } from "react-redux";
-import { BrowserRouter } from "react-router-dom";
+import { Router } from "react-router-dom";
+import { history } from "./_helpers/history";
 
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Provider store={store}>
+  <Provider store={store}>
+    <Router history={history}>
       <App />
-    </Provider>
-  </BrowserRouter>,
+    </Router>
+  </Provider>,
   document.getElementById("root")
 );
 

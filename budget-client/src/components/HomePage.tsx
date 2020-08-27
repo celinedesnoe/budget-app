@@ -12,7 +12,7 @@ const HomePage: FC = () => {
         <BudgetLeft />
         <BudgetProgression />
       </div>
-      <ExpenseInput />
+
       <ListExpenses />
       <AddButton />
     </div>
