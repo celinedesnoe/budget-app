@@ -1,7 +1,18 @@
-@mixin card($card-colour-palettes) {
-  @each $state, $card-colour in $card-colour-palettes {
+@mixin card($colour-palettes) {
+  @each $state, $colour in $colour-palettes {
     &-#{$state} {
-      background-color: $card-colour;
+      background-color: $colour;
+      color: white;
+    }
+  }
+}
+
+@mixin chart($colour-palettes) {
+  @each $state, $colour in $colour-palettes {
+    &-#{$state} {
+      background-color: $colour;
+      border: 1px solid $colour;
+      color: $colour;
     }
   }
 }

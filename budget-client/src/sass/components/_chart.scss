@@ -1,0 +1,25 @@
+.bar {
+  width: 100%;
+  height: 10px;
+  border: 1px solid grey;
+  position: relative;
+  border-radius: 10px;
+  margin: 18px 0px;
+}
+
+.bar-progression {
+  position: absolute;
+  background-color: blue;
+  height: 10px;
+  border-radius: 10px;
+  left: -2px;
+  top: -1px;
+  @include chart($colour-palettes);
+}
+
+.bar-text {
+  position: absolute;
+  right: 0px;
+  top: 10px;
+  font-size: 12px;
+}

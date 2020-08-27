@@ -6,6 +6,7 @@
 @import "./base/typography";
 
 @import "./components/input";
+@import "./components/chart";
 
 @import "./layout/card";
 
@@ -13,14 +14,10 @@ body {
   font-family: "Jost", sans-serif;
 }
 
-.budget-left {
-  box-shadow: 6px 4px 19px -2px rgba(0, 0, 0, 0.75);
-  background-color: #3a86ff;
-  border-radius: 5px;
-  padding: 8px 16px;
-  margin: 48px;
-  color: white;
-}
+// .budget-left {
+//   margin: 48px;
+
+// }
 
 .button-add-expense {
   background-color: red;
@@ -69,17 +66,4 @@ body {
   &.selected {
     color: blue;
   }
-}
-
-.bar {
-  width: 200px;
-  height: 10px;
-  border: 1px solid grey;
-  position: relative;
-}
-
-.bar-progression {
-  position: absolute;
-  background-color: blue;
-  height: 10px;
 }

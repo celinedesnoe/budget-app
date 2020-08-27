@@ -9,9 +9,9 @@ const BudgetLeft: FC = () => {
   const selectBudget = (state: RootState) => state.budget;
   const budget = useSelector(selectBudget);
   return (
-    <div className="budget-left">
+    <div className="card card-main budget-left">
       <div className="lighter">Solde restant</div>
-      <div className="title">{budget}</div>
+      <div className="title">{budget} €</div>
     </div>
   );
 };

@@ -26,8 +26,10 @@ library.add(
 function App() {
   return (
     <div className="App">
-      <BudgetLeft />
-      <BudgetProgression />
+      <div className="d-flex">
+        <BudgetLeft />
+        <BudgetProgression />
+      </div>
       <ExpenseInput />
       <ListExpenses />
     </div>
